@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "REST_API_app", "REST_API_app\REST_API_app.csproj", "{7C359525-1C4F-4A50-A17A-FD608C447D4A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "REST_API_shitcan", "REST_API_shitcan\REST_API_shitcan.csproj", "{7C359525-1C4F-4A50-A17A-FD608C447D4A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "REST_API_vet", "REST_API_vet\REST_API_vet.csproj", "{7676A3DE-7EDE-487A-BA05-94C77502B72C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,5 +14,9 @@ Global
 		{7C359525-1C4F-4A50-A17A-FD608C447D4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C359525-1C4F-4A50-A17A-FD608C447D4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C359525-1C4F-4A50-A17A-FD608C447D4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7676A3DE-7EDE-487A-BA05-94C77502B72C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7676A3DE-7EDE-487A-BA05-94C77502B72C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7676A3DE-7EDE-487A-BA05-94C77502B72C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7676A3DE-7EDE-487A-BA05-94C77502B72C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
