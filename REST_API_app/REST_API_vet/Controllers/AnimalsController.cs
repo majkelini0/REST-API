@@ -1,6 +1,6 @@
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using REST_API_vet.Models;
+using REST_API_vet.Database;
 
 namespace REST_API_vet.Controllers;
 
@@ -8,46 +8,49 @@ namespace REST_API_vet.Controllers;
 [ApiController]
 public class AnimalsController : ControllerBase
 {
-    public static List<Animal> animals = new List<Animal>();
-    
     [HttpGet]
     public IActionResult GetAnimals()
     {
+        var animals = MockDB.getInstance().Animals;
         return Ok(animals);
     }
 
     [HttpGet("{id}")]
-    public IActionResult GetAnimalByID(int id)
+    public IActionResult GetAnimalById(int id)
     {
+        var animals = MockDB.getInstance().Animals;
         var animal = animals.FirstOrDefault(a => a.id == id);
         if (animal == null)
             return NotFound();
         return Ok(animal);
     }
-
+    
     [HttpPost]
     public IActionResult AddAnimal([FromBody] Animal animal)
     {
+        var animals = MockDB.getInstance().Animals;
         animals.Add(animal);
-        return CreatedAtAction(nameof(GetAnimalByID), new { id = animal.id }, animal);
+        return CreatedAtAction(nameof(GetAnimalById), new { id = animal.id }, animal);
     }
-
+    
     [HttpPut("{id}")]
-    public IActionResult EditAnimalByID(int id, [FromBody] Animal updatedAnimal)
+    public IActionResult EditAnimalById(int id, [FromBody] Animal editedAnimal)
     {
+        var animals = MockDB.getInstance().Animals;
         var animal = animals.FirstOrDefault(a => a.id == id);
         if (animal == null)
             return NotFound();
-        animal.name = updatedAnimal.name;
-        animal.category = updatedAnimal.category;
-        animal.weight = updatedAnimal.weight;
-        animal.color = updatedAnimal.color;
+        animal.name = editedAnimal.name;
+        animal.category = editedAnimal.category;
+        animal.weight = editedAnimal.weight;
+        animal.color = editedAnimal.color;
         return Ok(animal);
     }
-
+    
     [HttpDelete("{id}")]
-    public IActionResult DeleteAnimalByID(int id)
+    public IActionResult DeleteAnimalById(int id)
     {
+        var animals = MockDB.getInstance().Animals;
         var animal = animals.FirstOrDefault(a => a.id == id);
         if (animal == null)
             return NotFound();

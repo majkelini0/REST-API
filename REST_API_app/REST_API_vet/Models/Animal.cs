@@ -1,6 +1,6 @@
 namespace REST_API_vet.Models;
 
-public class Animal : Shelter
+public class Animal
 {
     public int id { get; }
     public string name { get; set; }

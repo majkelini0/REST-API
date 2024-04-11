@@ -1,3 +1,4 @@
+using REST_API_vet.Database;
 public class Program
 {
     public static void Main(string[] args)
@@ -8,7 +9,8 @@ public class Program
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
-        builder.Services.AddControllers().AddXmlSerializerFormatters(); // added by me
+        builder.Services.AddControllers(); // added by me
+        builder.Services.AddSingleton<MockDB>(); // added by me
 
         var app = builder.Build();
 
